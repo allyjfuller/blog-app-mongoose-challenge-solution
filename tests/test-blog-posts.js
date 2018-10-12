@@ -141,6 +141,42 @@ describe('POST endpoint', function () {
     });
   });
 
+// PUT req. Test
+describe('PUT endpoint', function () {
+    it('should update fields you send over', function () {
+      const updateData = {
+        title: 'Mr. Bigglesworth goes to Washington',
+        content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.',
+        author: {
+          firstName: 'foo',
+          lastName: 'bar'
+        }
+      };
+
+      return BlogPost
+        .findOne()
+        .then(function (post) {
+          updateData.id = post.id;
+
+          return chai.request(app)
+            .put(`/posts/${post.id}`)
+            .send(updateData);
+        })
+        .then(function (res) {
+          expect(res).to.have.status(204);
+
+          return BlogPost.findById(updateData.id);
+        })
+        .then(function (post) {
+          expect(post.title).to.equal(updateData.title);
+          expect(post.content).to.equal(updateData.content);
+          expect(post.author.firstName).to.equal(updateData.author.firstName);
+          expect(post.author.lastName).to.equal(updateData.author.lastName);
+        });
+    });
+  });
+
+
 
 
 
