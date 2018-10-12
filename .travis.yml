@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: y4982WjDha26EX85cM29DQmFHdNaARFovPUJijBTlFqnhjAd4U8s9hlZ5tSjMFScgPfuqKstcPgW2Qyax45k4X+/4GqrNFYQGnOtef4mVo8TkQWXqsyEVzID+KmctsCXVoiGoDHPWxgftbgO1ENtynwwKSzJC12gktrs/QHgIISNzYJtqzYsAm41OLoQvVpULM7bowCT8e2vmVhUIt+tgRQ/4CQAf0gPShELYhqqLzfTlIGCiiVPO1fs7h7COtV3NlQbgPEBNYVJEtPOayxa06+LIdInX+JNKb/jA1deEBKQypjkejqb4Sw1tYeWTuZhq0jfP+soA12E/U1sA7mB85MU0kAmrxMcbUVABL9rHbfZuLvKZz20S9fpz+9SXnRbuzibXn28hjrjwNMU13RYS1dviJLONGbOIGt/yNovdohE8dQMpDGAF3J5W8FkBVbdnC/TxafOD8yJ9uKu9bTv8Igckl70GGFeGc0LP+iSLBM8BVtDjWQoK9miN/9xkOssSRKiltWKQ5wD3T+dHKSiCNIIy/dNo1HUPjGAmVFBC1XjOjMtZHwY9ojRcnDrJ0tQOHticGGBn9oTVI4zM+wdWwnxBdt2XhkeEURTDQMo5ouASOmrHLd/MMz0KCRdSh+542taXgK7PShBgRnvJUjpC5aPOkTkQuyGPz8kUa9XdqI=
+  app: https://aqueous-taiga-85559.herokuapp.com/
+  on:
+    repo: allyjfuller/blog-app-mongoose-challenge-solution
